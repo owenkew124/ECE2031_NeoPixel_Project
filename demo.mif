@@ -1,0 +1,258 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 2048;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    [000..7FF] : 0000;  -- Default to NOP
+
+           000 : 9000;  -- 	IN		Switches
+           001 : 48EB;  -- 	AND		Bit0
+           002 : 3813;  -- 	JPOS 	change24State
+           003 : 9000;  -- 	IN		Switches
+           004 : 48EC;  -- 	AND		Bit1
+           005 : 3857;  -- 	JPOS 	change16State
+           006 : 9000;  -- 	IN		Switches
+           007 : 48ED;  -- 	AND		Bit2
+           008 : 38A5;  -- 	JPOS 	change16AllState
+           009 : 9000;  -- 	IN 		Switches
+           00A : 48EE;  -- 	AND		Bit3
+           00B : 38C1;  -- 	JPOS	change16Strobe
+           00C : 9000;  -- 	IN 		Switches
+           00D : 48EF;  -- 	AND		Bit4
+           00E : 38D1;  -- 	JPOS	changeChristmas
+           00F : 9000;  -- 	IN		Switches
+           010 : 48F0;  -- 	AND		Bit5
+           011 : 38D7;  -- 	JPOS	changeRainbow
+           012 : 2800;  -- 	JUMP 	Start
+           013 : 9000;  --    IN      Switches
+           014 : 48EB;  --    AND     Bit0
+           015 : 4000;  --    JZERO   Start
+           016 : BA61;  --    LOADI	&B1110001001100001
+           017 : 98A1;  --    OUT		change_24Data
+           018 : BD07;  --    LOADI	&B1101010100000111
+           019 : 98A2;  --    OUT		change_24Addr
+           01A : BEE1;  --    LOADI	&B1110111011100001
+           01B : 98A1;  --    OUT		change_24Data
+           01C : BD06;  --    LOADI	&B0001010100000110
+           01D : 98A2;  --    OUT		change_24Addr
+           01E : BAE1;  --    LOADI	&B1110001011100001
+           01F : 98A1;  --    OUT		change_24Data
+           020 : BD05;  --    LOADI	&B1101010100000101
+           021 : 98A2;  --    OUT		change_24Addr
+           022 : BAE1;  --    LOADI	&B1110001011100001
+           023 : 98A1;  --    OUT		change_24Data
+           024 : BD04;  --    LOADI	&B1101010100000100
+           025 : 98A2;  --    OUT		change_24Addr
+           026 : BAE1;  --    LOADI	&B1110001011100001
+           027 : 98A1;  --    OUT		change_24Data
+           028 : BD34;  --    LOADI	&B1001010100110100
+           029 : 98A2;  --    OUT		change_24Addr
+           02A : BAE1;  --    LOADI	&B0100001011100001
+           02B : 98A1;  --    OUT		change_24Data
+           02C : BD74;  --    LOADI	&B1111010101110100
+           02D : 98A2;  --    OUT		change_24Addr
+           02E : BA01;  --    LOADI	&B1110101000000001
+           02F : 98A1;  --    OUT		change_24Data
+           030 : BD1E;  --    LOADI	&B1101110100011110
+           031 : 98A2;  --    OUT		change_24Addr
+           032 : BA89;  --    LOADI	&B0110001010001001
+           033 : 98A1;  --    OUT		change_24Data
+           034 : BD01;  --    LOADI	&B1101010100000001
+           035 : 98A2;  --    OUT		change_24Addr
+           036 : BA61;  --    LOADI	&B1110001001100001
+           037 : 98A1;  --    OUT		change_24Data
+           038 : BD00;  --    LOADI	&B1101010100000000
+           039 : 98A2;  --    OUT		change_24Addr
+           03A : BEE1;  --    LOADI	&B1110111011100001
+           03B : 98A1;  --    OUT		change_24Data
+           03C : BDBF;  --    LOADI	&B0001010110111111
+           03D : 98A2;  --    OUT		change_24Addr
+           03E : BAE1;  --    LOADI	&B1110001011100001
+           03F : 98A1;  --    OUT		change_24Data
+           040 : BD85;  --    LOADI	&B1101010110000101
+           041 : 98A2;  --    OUT		change_24Addr
+           042 : BAE1;  --    LOADI	&B1110001011100001
+           043 : 98A1;  --    OUT		change_24Data
+           044 : BD24;  --    LOADI	&B1101010100100100
+           045 : 98A2;  --    OUT		change_24Addr
+           046 : BAE1;  --    LOADI	&B1110001011100001
+           047 : 98A1;  --    OUT		change_24Data
+           048 : BD3F;  --    LOADI	&B1001010100111111
+           049 : 98A2;  --    OUT		change_24Addr
+           04A : BAE1;  --    LOADI	&B0100001011100001
+           04B : 98A1;  --    OUT		change_24Data
+           04C : BD5C;  --    LOADI	&B1111010101011100
+           04D : 98A2;  --    OUT		change_24Addr
+           04E : BA01;  --    LOADI	&B1110101000000001
+           04F : 98A1;  --    OUT		change_24Data
+           050 : BD0E;  --    LOADI	&B1101110100001110
+           051 : 98A2;  --    OUT		change_24Addr
+           052 : BA89;  --    LOADI	&B0110001010001001
+           053 : 98A1;  --    OUT		change_24Data
+           054 : BD19;  --    LOADI	&B1101010100011001
+           055 : 98A2;  --    OUT		change_24Addr
+           056 : 2800;  --    JUMP		Start
+           057 : 9000;  -- 	IN		Switches
+           058 : 48EC;  -- 	AND		Bit1
+           059 : 4000;  -- 	JZERO	Start
+           05A : B87F;  -- 	LOADI	&B0000000001111111
+           05B : 98A3;  -- 	OUT 	change_16Data
+           05C : B800;  -- 	LOADI	&B00000000
+           05D : 98A4;  -- 	OUT		change_16Addr
+           05E : BABF;  -- 	LOADI	&B0000001010111111
+           05F : 98A3;  -- 	OUT 	change_16Data
+           060 : B803;  -- 	LOADI	&B00000011
+           061 : 98A4;  -- 	OUT		change_16Addr
+           062 : BA96;  -- 	LOADI	&B0000001010010110
+           063 : 98A3;  -- 	OUT 	change_16Data
+           064 : B805;  -- 	LOADI	&B00000101
+           065 : 98A4;  -- 	OUT		change_16Addr
+           066 : B860;  -- 	LOADI	&B0000000001100000
+           067 : 98A3;  -- 	OUT 	change_16Data
+           068 : B827;  -- 	LOADI	&B00100111
+           069 : 98A4;  -- 	OUT		change_16Addr
+           06A : BFFF;  -- 	LOADI	&B1111111111111111
+           06B : 98A3;  -- 	OUT 	change_16Data
+           06C : B803;  -- 	LOADI	&B00000011
+           06D : 98A4;  -- 	OUT		change_16Addr
+           06E : BBB6;  -- 	LOADI	&B0101001110110110
+           06F : 98A3;  -- 	OUT 	change_16Data
+           070 : B81D;  -- 	LOADI	&B00011101
+           071 : 98A4;  -- 	OUT		change_16Addr
+           072 : B841;  -- 	LOADI	&B0000000001000001
+           073 : 98A3;  -- 	OUT 	change_16Data
+           074 : B854;  -- 	LOADI	&B01010100
+           075 : 98A4;  -- 	OUT		change_16Addr
+           076 : B801;  -- 	LOADI	&B0000000000000001
+           077 : 98A3;  -- 	OUT 	change_16Data
+           078 : B833;  -- 	LOADI	&B00110011
+           079 : 98A4;  -- 	OUT		change_16Addr
+           07A : BA96;  -- 	LOADI	&B0000001010010110
+           07B : 98A3;  -- 	OUT 	change_16Data
+           07C : B8BF;  -- 	LOADI	&B10111111
+           07D : 98A4;  -- 	OUT		change_16Addr
+           07E : B805;  -- 	LOADI	&B101
+           07F : 80DC;  -- 	CALL	DelayAC
+           080 : 80E2;  -- 	CALL	PresWait
+           081 : B87F;  -- 	LOADI	&B1110000001111111
+           082 : 98A3;  -- 	OUT 	change_16Data
+           083 : B810;  -- 	LOADI	&B00010000
+           084 : 98A4;  -- 	OUT		change_16Addr
+           085 : BABF;  -- 	LOADI	&B0001001010111111
+           086 : 98A3;  -- 	OUT 	change_16Data
+           087 : B883;  -- 	LOADI	&B10000011
+           088 : 98A4;  -- 	OUT		change_16Addr
+           089 : BA96;  -- 	LOADI	&B0000001010010110
+           08A : 98A3;  -- 	OUT 	change_16Data
+           08B : B845;  -- 	LOADI	&B01000101
+           08C : 98A4;  -- 	OUT		change_16Addr
+           08D : B860;  -- 	LOADI	&B0000000001100000
+           08E : 98A3;  -- 	OUT 	change_16Data
+           08F : B827;  -- 	LOADI	&B00100111
+           090 : 98A4;  -- 	OUT		change_16Addr
+           091 : BFFF;  -- 	LOADI	&B1111111111111111
+           092 : 98A3;  -- 	OUT 	change_16Data
+           093 : B803;  -- 	LOADI	&B00000011
+           094 : 98A4;  -- 	OUT		change_16Addr
+           095 : BBB6;  -- 	LOADI	&B1111001110110110
+           096 : 98A3;  -- 	OUT 	change_16Data
+           097 : B81D;  -- 	LOADI	&B00011101
+           098 : 98A4;  -- 	OUT		change_16Addr
+           099 : B841;  -- 	LOADI	&B0011100001000001
+           09A : 98A3;  -- 	OUT 	change_16Data
+           09B : B854;  -- 	LOADI	&B01010100
+           09C : 98A4;  -- 	OUT		change_16Addr
+           09D : B801;  -- 	LOADI	&B0000000000000001
+           09E : 98A3;  -- 	OUT 	change_16Data
+           09F : B83F;  -- 	LOADI	&B00111111
+           0A0 : 98A4;  -- 	OUT		change_16Addr
+           0A1 : BE96;  -- 	LOADI	&B0011111010010110
+           0A2 : 98A3;  -- 	OUT 	change_16Data
+           0A3 : B8A7;  -- 	LOADI	&B10100111
+           0A4 : 2800;  -- 	JUMP	Start
+           0A5 : 9000;  -- 	IN		Switches
+           0A6 : 48ED;  -- 	AND		Bit2
+           0A7 : 4000;  -- 	JZERO	Start
+           0A8 : B980;  -- 	LOADI	&B1111100110000000
+           0A9 : 98A5;  -- 	OUT		change_all
+           0AA : B807;  -- 	LOADI	&B111
+           0AB : 80DC;  -- 	CALL	DelayAC
+           0AC : BBA1;  -- 	LOADI	&B1110001110100001
+           0AD : 98A5;  -- 	OUT		change_all
+           0AE : B807;  -- 	LOADI	&B111
+           0AF : 80DC;  -- 	CALL	DelayAC
+           0B0 : BFC5;  -- 	LOADI	&B1111111111000101
+           0B1 : 98A5;  -- 	OUT		change_all
+           0B2 : B807;  -- 	LOADI	&B111
+           0B3 : 80DC;  -- 	CALL	DelayAC
+           0B4 : BE64;  -- 	LOADI	&B110111001100100
+           0B5 : 98A5;  -- 	OUT		change_all
+           0B6 : B807;  -- 	LOADI	&B111
+           0B7 : 80DC;  -- 	CALL	DelayAC
+           0B8 : BD5E;  -- 	LOADI	&B100010101011110
+           0B9 : 98A5;  -- 	OUT		change_all
+           0BA : B807;  -- 	LOADI	&B111
+           0BB : 80DC;  -- 	CALL	DelayAC
+           0BC : BA3E;  -- 	LOADI	&B1001001000111110
+           0BD : 98A5;  -- 	OUT		change_all
+           0BE : B807;  -- 	LOADI	&B111
+           0BF : 80DC;  -- 	CALL	DelayAC
+           0C0 : 28A5;  -- 	JUMP	change16AllState
+           0C1 : 9000;  -- 	IN      Switches
+           0C2 : 48EE;  -- 	AND     Bit3
+           0C3 : 4000;  -- 	JZERO   Start
+           0C4 : BFFF;  -- 	LOADI   &B1111111111111111
+           0C5 : 98A5;  -- 	OUT     change_all
+           0C6 : B800;  -- 	LOADI   &B0000000000000000
+           0C7 : 98A5;  -- 	OUT     change_all
+           0C8 : BFFF;  -- 	LOADI   &B1111111111111111
+           0C9 : 98A5;  -- 	OUT     change_all
+           0CA : B800;  -- 	LOADI   &B0000000000000000
+           0CB : 98A5;  -- 	OUT     change_all
+           0CC : BFFF;  -- 	LOADI   &B1111111111111111
+           0CD : 98A5;  -- 	OUT     change_all
+           0CE : B800;  -- 	LOADI   &B0000000000000000
+           0CF : 98A5;  -- 	OUT     change_all
+           0D0 : 28C1;  -- 	JUMP    change16Strobe
+           0D1 : 9000;  -- 	IN      Switches
+           0D2 : 48EF;  -- 	AND     Bit4
+           0D3 : 4000;  -- 	JZERO   Start
+           0D4 : B801;  -- 	LOADI	&B1
+           0D5 : 98A7;  -- 	OUT		christmas
+           0D6 : 28D1;  -- 	JUMP	changeChristmas
+           0D7 : 9000;  -- 	IN      Switches
+           0D8 : 48F0;  -- 	AND     Bit5
+           0D9 : 4000;  -- 	JZERO   Start
+           0DA : 98A6;  -- 	OUT		change_wave
+           0DB : 28D7;  -- 	JUMP	changeRainbow	
+           0DC : 10E6;  -- 	STORE  DelayTime   ; Save the desired delay
+           0DD : 9802;  -- 	OUT    Timer       ; Reset the timer
+           0DE : 9002;  -- 	IN     Timer       ; Get the current timer value
+           0DF : 20E6;  -- 	SUB    DelayTime
+           0E0 : 30DE;  -- 	JNEG   WaitingLoop ; Repeat until timer = delay value
+           0E1 : 8800;  -- 	RETURN
+           0E2 : 9000;  -- 	IN	  	Switches
+           0E3 : 48F4;  -- 	AND		Bit9
+           0E4 : 40E2;  -- 	JZERO	PresWait
+           0E5 : 8800;  -- 	RETURN
+           0E6 : 0000;  -- DelayTime: DW 0
+           0E7 : 0000;  -- OutColor:  DW 0
+           0E8 : 0030;  -- RedMask:   DW &B110000
+           0E9 : 000C;  -- GreenMask: DW &B1100
+           0EA : 0003;  -- BlueMask:  DW &B11
+           0EB : 0001;  -- Bit0:	   DW &B0000000001
+           0EC : 0002;  -- Bit1:	   DW &B0000000010
+           0ED : 0004;  -- Bit2:	   DW &B0000000100
+           0EE : 0008;  -- Bit3:	   DW &B0000001000
+           0EF : 0010;  -- Bit4:	   DW &B0000010000
+           0F0 : 0020;  -- Bit5:	   DW &B0000100000
+           0F1 : 0040;  -- Bit6:	   DW &B0001000000
+           0F2 : 0080;  -- Bit7:	   DW &B0010000000
+           0F3 : 0100;  -- Bit8:	   DW &B0100000000
+           0F4 : 0200;  -- Bit9:	   DW &B1000000000
+  END;
